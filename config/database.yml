@@ -86,6 +86,7 @@ production:
     database: project_ngoc_bich_production
     username: project_ngoc_bich
     password: <%= ENV["PROJECT_NGOC_BICH_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
   cache:
     <<: *primary_production
     database: project_ngoc_bich_production_cache
