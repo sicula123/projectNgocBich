@@ -23,13 +23,18 @@
   </head>
 
   <body>
+    <%= link_to "Home", root_path %>
+    <% if authenticated? %>
+      <%= Current.user.email_address %>
+      <%= button_to "Sign out", session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", new_session_path %>
+      <%= link_to "Sign up", new_registration_path %>
+    <% end %>
+    <hr>
     <div class="notice"><%= notice %></div>
-
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
-    </nav>
-
+    <div class="alert"><%= alert %></div>
+    <hr>
     <main>
       <%= yield %>
     </main>

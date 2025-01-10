@@ -25,6 +25,10 @@ body {
   .notice {
     color: green;
   }
+
+  .alert {
+    color: rgb(175, 119, 0);
+  }
   
   section.product {
     display: flex;
